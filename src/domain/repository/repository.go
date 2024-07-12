@@ -87,6 +87,10 @@ type PropertyRepository interface {
 	BaseRepository[model.Property]
 }
 
+type EventRepository interface {
+	BaseRepository[model.Event]
+}
+
 type UserRepository interface {
 	ExistsMobileNumber(ctx context.Context, mobileNumber string) (bool, error)
 	ExistsUsername(ctx context.Context, username string) (bool, error)
