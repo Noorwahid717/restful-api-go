@@ -111,3 +111,8 @@ func GetRoleRepository(cfg *config.Config) contractRepository.RoleRepository {
 	var preloads []database.PreloadEntity = []database.PreloadEntity{}
 	return infraRepository.NewBaseRepository[model.Role](cfg, preloads)
 }
+
+func GetEventRepository(cfg *config.Config) contractRepository.EventRepository {
+	var preloads []database.PreloadEntity = []database.PreloadEntity{}
+	return infraRepository.NewBaseRepository[model.Event](cfg, preloads)
+}

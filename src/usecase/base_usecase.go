@@ -72,3 +72,21 @@ func (u *BaseUsecase[TEntity, TCreate, TUpdate, TResponse]) GetByFilter(ctx cont
 
 	return filter.Paginate[TEntity, TResponse](count, entities, req.PageNumber, int64(req.PageSize))
 }
+
+// func (u *BaseUsecase[TEntity, TCreate, TUpdate, TResponse]) GetList(ctx context.Context) ([]TResponse, error) {
+// 	var response []TResponse
+// 	entities, err := u.repository.GetList(ctx)
+// 	if err != nil {
+// 		return response, err
+// 	}
+
+// 	for _, entity := range *entities {
+// 		convertedEntity, err := common.TypeConverter[TResponse](entity)
+// 		if err != nil {
+// 			return response, err
+// 		}
+// 		response = append(response, convertedEntity)
+// 	}
+
+// 	return response, nil
+// }
